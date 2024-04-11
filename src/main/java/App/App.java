@@ -2,6 +2,8 @@ package App;
 
 public class App {
     public static void main(String[] args) {
-        Atividades.AtividadeUm();
+        Atividades.AtividadeUmLetraA();
+        Atividades.AtividadeUmLetraB();
+        Atividades.AtividadeUmLetraC();
     }
 }
