@@ -107,9 +107,10 @@ public class Atividades {
     }
 
     public static void AtividadeDois(){
-        char ESCOLHA_A = 'A';
-        char ESCOLHA_B = 'B';
-        char ESCOLHA_C = 'C';
+        final char ESCOLHA_A = 'A';
+        final char ESCOLHA_B = 'B';
+        final char ESCOLHA_C = 'C';
+        final String HEX_DIGITS = "0123456789ABCDEF";
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite o número decimal que deseja converter:");
@@ -131,8 +132,14 @@ public class Atividades {
         }
 
         StringBuilder sb = new StringBuilder("Resultado da conversão: ");
-        while (!pilha.isEmpty())
+        while (!pilha.isEmpty()){
+            if (escolha == ESCOLHA_C) {
+                sb.append(HEX_DIGITS.charAt(pilha.pop()));
+                continue;
+            }
+
             sb.append(pilha.pop());
+        }
 
         System.out.println(sb);
 
