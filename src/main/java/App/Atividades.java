@@ -107,7 +107,6 @@ public class Atividades {
     }
 
     public static void AtividadeDois(){
-        final char ESCOLHA_A = 'A';
         final char ESCOLHA_B = 'B';
         final char ESCOLHA_C = 'C';
         final String HEX_DIGITS = "0123456789ABCDEF";
