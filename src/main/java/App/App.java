@@ -5,5 +5,7 @@ public class App {
         Atividades.AtividadeUmLetraA();
         Atividades.AtividadeUmLetraB();
         Atividades.AtividadeUmLetraC();
+        Atividades.AtividadeUmLetraD();
+        Atividades.AtividadeDois();
     }
 }

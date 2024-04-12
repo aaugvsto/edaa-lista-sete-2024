@@ -1,8 +1,6 @@
 package App;
 
-import java.util.List;
-import java.util.Stack;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Atividades {
 
@@ -73,5 +71,71 @@ public class Atividades {
 
         while (!stack.empty())
             System.out.println(stack.pop());
+    }
+
+    public static void AtividadeUmLetraD(){
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(5);
+        stack.push(6);
+        stack.push(10);
+        stack.push(-200);
+        stack.push(22);
+        stack.push(20);
+        stack.push(97);
+
+        int stackSize = stack.size();
+        double largestNumber = Double.NEGATIVE_INFINITY;
+        double sumArithmeticMean = 0;
+        double minimumNumber = Double.POSITIVE_INFINITY;
+
+        while (!stack.isEmpty()){
+            int number = stack.pop();
+
+            if(number > largestNumber)
+                largestNumber = number;
+
+            if(number < minimumNumber)
+                minimumNumber = number;
+
+            sumArithmeticMean += number;
+        }
+
+        System.out.println("Maior: " + largestNumber);
+        System.out.println("Menor: " + minimumNumber);
+        System.out.println("Média Aritmética: " + sumArithmeticMean / stackSize);
+    }
+
+    public static void AtividadeDois(){
+        char ESCOLHA_A = 'A';
+        char ESCOLHA_B = 'B';
+        char ESCOLHA_C = 'C';
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o número decimal que deseja converter:");
+        int numeroDecimal = scanner.nextInt();
+
+        System.out.println("Escolha a base para a conversão:");
+        System.out.println("a) Decimal para Binário");
+        System.out.println("b) Decimal para Octal");
+        System.out.println("c) Decimal para Hexadecimal");
+
+        char escolha = scanner.next().toUpperCase().charAt(0);
+        int divisaoBase = escolha == ESCOLHA_C ? 16 : escolha == ESCOLHA_B ? 8 : 2;
+
+        Stack<Integer> pilha = new Stack<>();
+
+        while (numeroDecimal > 0) {
+            pilha.push(numeroDecimal % divisaoBase);
+            numeroDecimal /= divisaoBase;
+        }
+
+        StringBuilder sb = new StringBuilder("Resultado da conversão: ");
+        while (!pilha.isEmpty())
+            sb.append(pilha.pop());
+
+        System.out.println(sb);
+
+        scanner.close();
     }
 }
